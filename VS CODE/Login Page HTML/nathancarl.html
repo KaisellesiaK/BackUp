@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login" class="login-container visible">
+        <div class="login-content">
+            <img src="Logo.png" alt="Logo" class="logo">
+            <div class="form-container">
+                <h2>Welcome to Kaisel's Login Page</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <label>
+                        <input type="checkbox" id="togglePassword"> Show Password
+                    </label>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="links">
+                    <a href="#" onclick="showSection('create-account')">Create Account</a>
+                    <a href="#" onclick="showSection('forgot-password')">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="create-account" class="login-container">
+        <div class="form-container">
+            <h2>Create Account</h2>
+            <form id="createAccountForm">
+                <input type="text" id="newUsername" placeholder="Username" required>
+                <input type="password" id="newPassword" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <label>
+                    <input type="checkbox" id="toggleNewPassword"> Show Password
+                </label>
+                <button type="submit">Create Account</button>
+            </form>
+            <div class="links">
+                <a href="#" onclick="showSection('login')">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="forgot-password" class="login-container">
+        <div class="form-container">
+            <h2>Forgot Password</h2>
+            <form id="forgotPasswordForm">
+                <input type="text" id="forgotUsername" placeholder="Username" required>
+                <input type="password" id="newForgotPassword" placeholder="New Password" required>
+                <input type="password" id="confirmForgotPassword" placeholder="Confirm New Password" required>
+                <label>
+                    <input type="checkbox" id="toggleForgotPassword"> Show Password
+                </label>
+                <button type="submit">Reset Password</button>
+            </form>
+            <div class="links">
+                <a href="#" onclick="showSection('login')">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcome" class="login-container">
+        <div class="form-container">
+            <h2>Welcome, <span id="welcomeUsername">Kaisel</span>!</h2>
+            <p>You have successfully logged in.</p>
+            <div class="links">
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

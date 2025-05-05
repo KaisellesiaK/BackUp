@@ -1,0 +1,105 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Dark background for contrast */
+    color: #fff; /* White text for better readability */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Slideshow container styling */
+.slideshow-container {
+    position: relative;
+    width: 500px; /* Adjusted for larger slideshow */
+    height: 500px; /* Adjusted for larger slideshow */
+    margin: auto;
+    overflow: hidden;
+    border: 5px solid #fff; /* White border around the slideshow */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    background-color: #333; /* Dark background for the slideshow */
+}
+
+/* Slide styling */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Start with invisible slides */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+}
+
+.slide img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Maintain the container's height */
+    object-fit: cover; /* Ensures the image fits without distortion */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+.slide.active {
+    opacity: 1; /* Fade in the active slide */
+    z-index: 1; /* Ensure the active slide is on top */
+}
+
+/* Navigation buttons styling */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    width: auto;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 50%; /* Circular buttons */
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 2; /* Ensure buttons are above the slides */
+}
+
+.next {
+    right: 10px; /* Position near the right edge */
+}
+
+.prev {
+    left: 10px; /* Position near the left edge */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background on hover */
+    color: #000; /* Dark text on hover */
+}
+
+/* Dots container styling */
+.dots-container {
+    position: absolute;
+    bottom: 20px; /* Position dots at the bottom of the slideshow */
+    width: 100%; /* Center dots horizontally */
+    text-align: center;
+    z-index: 2; /* Ensure dots are above the slides */
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff; /* Highlight active dot */
+}
+
+.dot:hover {
+    background-color: #777; /* Slightly darker on hover */
+}
